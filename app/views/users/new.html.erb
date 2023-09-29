@@ -1,1 +1,86 @@
 <h1>New User</h1>
+<%= form_with model: @user do |form| %>
+<fieldset>
+    <%= form.label :username %>
+    <%= form.text_field :username, 'aria-describedby' => 'username-helper' %>
+    <% @user.errors.full_messages_for(:username).each do |message| %>
+    <small id="username-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :email %>
+    <%= form.email_field :email, 'aria-describedby' => 'email-helper' %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+    <small id="email-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :email_confirmation %>
+    <%= form.email_field :email_confirmation, 'aria-describedby' => 'email-confirmation-helper' %>
+    <% @user.errors.full_messages_for(:email_confirmation).each do |message| %>
+    <small id="email-confirmation-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :password %>
+    <%= form.password_field :password, 'aria-describedby' => 'password-helper' %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+    <small id="password-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, 'aria-describedby' => 'password-confirmation-helper' %>
+    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+    <small id="password-confirmation-helper">
+        <%= message %>
+    </small>
+    <% end %>
+</fieldset>
+<%= form.submit %>
+<% end %>
+<!-- <form accept-charset="UTF-8" action="/users" method="post"> -->
+<!--     <input type="hidden" -->
+<!--            name="authenticity_token" -->
+<!--            value="<%= form_authenticity_token %>"> -->
+<!--     <fieldset> -->
+<!--         <label for="user[username]"> -->
+<!--             Username -->
+<!--             <input name="user[username]" -->
+<!--                    id="user[username]" -->
+<!--                    type="text" -->
+<!--                    placeholder="Username" /> -->
+<!--         </label> -->
+<!--         <label for="user[email]"> -->
+<!--             Email -->
+<!--             <input type="email" -->
+<!--                    name="user[email]" -->
+<!--                    id="user[email]" -->
+<!--                    placeholder="Email" -->
+<!--                    autocomplete="email" /> -->
+<!--         </label> -->
+<!--         <label for="user[email_confirmation]"> -->
+<!--             Confirm Email -->
+<!--             <input type="email" -->
+<!--                    name="user[email_confirmation]" -->
+<!--                    id="user[email_confirmation]" -->
+<!--                    placeholder="Confirm Email" -->
+<!--                    autocomplete="email" /> -->
+<!--         </label> -->
+<!--         <label for="user[password]"> -->
+<!--             Password -->
+<!--             <input type="password" -->
+<!--                    name="user[password]" -->
+<!--                    id="user[password]" -->
+<!--                    placeholder="Password" /> -->
+<!--         </label> -->
+<!--         <label for="user[password_confirmation]"> -->
+<!--             Confirm Password -->
+<!--             <input type="password" -->
+<!--                    name="user[password_confirmation]" -->
+<!--                    id="user[password_confirmation]" -->
+<!--                    placeholder="Confirm Password" /> -->
+<!--         </label> -->
+<!--     </fieldset> -->
+<!--     <input type="submit" value="Register" /> -->
+<!-- </form> -->

@@ -1,0 +1,41 @@
+<h1>Edit User</h1>
+<%= form_with model: @user do |form| %>
+<fieldset>
+    <%= form.label :username %>
+    <%= form.text_field :username, 'aria-describedby' => 'username-helper' %>
+    <% @user.errors.full_messages_for(:username).each do |message| %>
+    <small id="username-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :email %>
+    <%= form.email_field :email, 'aria-describedby' => 'email-helper' %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+    <small id="email-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :email_confirmation %>
+    <%= form.email_field :email_confirmation, 'aria-describedby' => 'email-confirmation-helper' %>
+    <% @user.errors.full_messages_for(:email_confirmation).each do |message| %>
+    <small id="email-confirmation-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :password %>
+    <%= form.password_field :password, 'aria-describedby' => 'password-helper' %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+    <small id="password-helper">
+        <%= message %>
+    </small>
+    <% end %>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, 'aria-describedby' => 'password-confirmation-helper' %>
+    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+    <small id="password-confirmation-helper">
+        <%= message %>
+    </small>
+    <% end %>
+</fieldset>
+<%= form.submit %>
+<% end %>

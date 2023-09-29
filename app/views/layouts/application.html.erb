@@ -11,6 +11,20 @@
         <%= javascript_importmap_tags %>
     </head>
     <body>
+        <nav class="container">
+            <ul>
+                <li>
+                    <strong>
+                        <%= link_to "ReFormer", root_path %>
+                    </strong>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <%= link_to "New User", new_user_path %>
+                </li>
+            </ul>
+        </nav>
         <main class="container">
             <%= yield %>
         </main>
